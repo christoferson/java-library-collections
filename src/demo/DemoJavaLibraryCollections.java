@@ -2,6 +2,10 @@ package demo;
 
 import java.util.Arrays;
 import java.util.Set;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+import demo.DemoJavaLibraryCollections.Value;
 
 public class DemoJavaLibraryCollections {
 
@@ -10,6 +14,8 @@ public class DemoJavaLibraryCollections {
 		demoSetOfArgumentMustbeUnique();
 		
 		demoPeekAndFlatMap();
+		
+		demoConsumer();
 		
 	}
 
@@ -28,5 +34,24 @@ public class DemoJavaLibraryCollections {
 			e.printStackTrace();
 		}
 	}
+	
+	static class Value {
+		static Integer counterC = 1;
+		static Integer counterF = 1;
+	}
 
+	private static void demoConsumer() {
+
+		Consumer<Integer> addC = i -> Value.counterC += i;
+		Consumer<Integer> showC = i -> System.out.print(i);
+		addC.andThen(showC).accept(1);
+
+		Function<Integer, Integer> addF = i -> Value.counterF += i;
+		Function<Integer, Integer> showF = i -> {
+			System.out.print(i);
+			return i;
+		};
+		addF.andThen(showF).apply(1);
+	}
+	
 }
