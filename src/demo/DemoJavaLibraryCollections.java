@@ -1,6 +1,7 @@
 package demo;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -15,7 +16,10 @@ public class DemoJavaLibraryCollections {
 		
 		demoConsumer(); System.out.println();
 		
+		demoList();
 	}
+
+
 
 	private static void demoPeekAndFlatMap() {
 		String[][] arr = {{"a", "d"}, {"n", "d"}, {"a", "x"}};
@@ -50,6 +54,11 @@ public class DemoJavaLibraryCollections {
 			return i;
 		};
 		addF.andThen(showF).apply(1);
+	}
+	
+	private static void demoList() {
+		List<Integer> numbers = List.of(7, 8, 9, 1);
+		numbers.forEach(System.out::print); System.out.println();
 	}
 	
 }
