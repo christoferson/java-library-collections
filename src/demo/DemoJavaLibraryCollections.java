@@ -5,17 +5,15 @@ import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import demo.DemoJavaLibraryCollections.Value;
-
 public class DemoJavaLibraryCollections {
 
 	public static void main(String[] args) {
 		
-		demoSetOfArgumentMustbeUnique();
+		demoSetOfArgumentMustbeUnique(); System.out.println();
 		
-		demoPeekAndFlatMap();
+		demoPeekAndFlatMap(); System.out.println();
 		
-		demoConsumer();
+		demoConsumer(); System.out.println();
 		
 	}
 
